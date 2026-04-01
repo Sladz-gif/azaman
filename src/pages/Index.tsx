@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Send, PiggyBank, Ticket, BookOpen, TrendingUp, Smartphone, Shield, Zap, Users, ChevronRight, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTheme } from '@/context/ThemeContext';
 import appMockup from '@/assets/app-mockup.png';
 
 const fadeUp = {
@@ -16,32 +17,36 @@ const stagger = {
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
+  const { colors } = useTheme();
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-border/50">
+    <nav className="fixed top-0 left-0 right-0 z-50" style={{ backgroundColor: colors.background, borderColor: colors.border }}>
       <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
-        <span className="font-logo text-2xl text-primary">AZAMAN</span>
-        <div className="hidden md:flex items-center gap-8 font-body text-sm text-muted-foreground">
-          <a href="#features" className="hover:text-foreground transition-colors">Features</a>
-          <a href="#how-it-works" className="hover:text-foreground transition-colors">How It Works</a>
-          <a href="#testimonials" className="hover:text-foreground transition-colors">Stories</a>
-          <a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a>
+        <span className="font-logo text-xl sm:text-2xl" style={{ color: colors.accent }}>AZAMAN</span>
+        <div className="hidden md:flex items-center gap-6 lg:gap-8 font-body text-sm" style={{ color: colors.mutedForeground }}>
+          <a href="#features" className="hover:text-foreground transition-colors" style={{ color: colors.mutedForeground }}>Features</a>
+          <a href="#how-it-works" className="hover:text-foreground transition-colors" style={{ color: colors.mutedForeground }}>How It Works</a>
+          <a href="#testimonials" className="hover:text-foreground transition-colors" style={{ color: colors.mutedForeground }}>Stories</a>
+          <a href="#pricing" className="hover:text-foreground transition-colors" style={{ color: colors.mutedForeground }}>Pricing</a>
         </div>
         <div className="hidden md:flex items-center gap-3">
-          <button onClick={() => navigate('/app')} className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors">Sign in</button>
-          <button onClick={() => navigate('/app')} className="gradient-gold text-primary-foreground font-display font-bold text-sm px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity">
+          <button onClick={() => navigate('/app')} className="font-body text-sm hover:text-foreground transition-colors" style={{ color: colors.mutedForeground }}>Sign in</button>
+          <button onClick={() => navigate('/app')} className="font-display font-bold text-sm px-4 lg:px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity" style={{ backgroundColor: colors.accent, color: 'white' }}>
             Get Started <ArrowRight className="inline w-4 h-4 ml-1" />
           </button>
         </div>
-        <button className="md:hidden text-foreground" onClick={() => setOpen(!open)}>
+        <button className="md:hidden" style={{ color: colors.foreground }} onClick={() => setOpen(!open)}>
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
       {open && (
-        <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="md:hidden glass border-t border-border/50 p-4 space-y-3">
-          <a href="#features" className="block py-2 text-sm text-muted-foreground" onClick={() => setOpen(false)}>Features</a>
-          <a href="#how-it-works" className="block py-2 text-sm text-muted-foreground" onClick={() => setOpen(false)}>How It Works</a>
-          <a href="#testimonials" className="block py-2 text-sm text-muted-foreground" onClick={() => setOpen(false)}>Stories</a>
-          <button onClick={() => { setOpen(false); navigate('/app'); }} className="w-full gradient-gold text-primary-foreground font-display font-bold text-sm px-5 py-2.5 rounded-full mt-2">Get Started</button>
+        <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="md:hidden" style={{ backgroundColor: colors.card, borderColor: colors.border }}>
+          <div className="px-4 py-4 space-y-3">
+            <a href="#features" className="block py-2 text-sm" style={{ color: colors.mutedForeground }} onClick={() => setOpen(false)}>Features</a>
+            <a href="#how-it-works" className="block py-2 text-sm" style={{ color: colors.mutedForeground }} onClick={() => setOpen(false)}>How It Works</a>
+            <a href="#testimonials" className="block py-2 text-sm" style={{ color: colors.mutedForeground }} onClick={() => setOpen(false)}>Stories</a>
+            <a href="#pricing" className="block py-2 text-sm" style={{ color: colors.mutedForeground }} onClick={() => setOpen(false)}>Pricing</a>
+            <button onClick={() => { setOpen(false); navigate('/app'); }} className="w-full font-display font-bold text-sm px-5 py-2.5 rounded-full mt-2" style={{ backgroundColor: colors.accent, color: 'white' }}>Get Started</button>
+          </div>
         </motion.div>
       )}
     </nav>
@@ -50,42 +55,43 @@ const Navbar = () => {
 
 const Hero = () => {
   const navigate = useNavigate();
+  const { colors } = useTheme();
   return (
-    <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[120px]" />
+    <section className="relative min-h-screen flex items-center pt-16 overflow-hidden" style={{ backgroundColor: colors.background }}>
+      <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, ${colors.accent}20, transparent)` }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[120px]" style={{ backgroundColor: `${colors.accent}20` }} />
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <motion.div initial="hidden" animate="visible" variants={stagger} className="space-y-8">
-            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 glass-card px-4 py-2 text-xs font-body text-muted-foreground">
-              <span className="w-2 h-2 rounded-full bg-neon animate-pulse" />
+            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-2 text-xs font-body" style={{ backgroundColor: colors.card, color: colors.mutedForeground }}>
+              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               Built for Legon. Made for everyone.
             </motion.div>
-            <motion.h1 variants={fadeUp} className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] text-balance">
+            <motion.h1 variants={fadeUp} className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] text-balance" style={{ color: colors.foreground }}>
               Drop Aza, make a send{' '}
-              <span className="gradient-text-gold">send you some coins</span>
+              <span style={{ color: colors.accent }}>send you some coins</span>
             </motion.h1>
-            <motion.p variants={fadeUp} className="font-body text-lg sm:text-xl text-muted-foreground max-w-lg leading-relaxed">
+            <motion.p variants={fadeUp} className="font-body text-lg sm:text-xl max-w-lg leading-relaxed" style={{ color: colors.mutedForeground }}>
               The fintech super-app for Ghanaian students. Send money, save smart, buy tickets, learn financial skills, and grow your hustle. All in one place.
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4">
-              <button onClick={() => navigate('/app')} className="gradient-gold text-primary-foreground font-display font-bold text-base px-8 py-4 rounded-full hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+              <button onClick={() => navigate('/app')} className="font-display font-bold text-base px-8 py-4 rounded-full hover:opacity-90 transition-opacity flex items-center justify-center gap-2" style={{ backgroundColor: colors.accent, color: 'white' }}>
                 Start Vibing <ArrowRight className="w-5 h-5" />
               </button>
-              <a href="#features" className="glass-card font-display font-bold text-base px-8 py-4 rounded-full text-foreground hover:bg-secondary/50 transition-colors text-center">
+              <a href="#features" className="font-display font-bold text-base px-8 py-4 rounded-full text-center hover:bg-secondary/50 transition-colors" style={{ backgroundColor: colors.card, color: colors.foreground }}>
                 See Features
               </a>
             </motion.div>
             <motion.div variants={fadeUp} className="flex items-center gap-6 pt-2">
               <div className="flex -space-x-3">
                 {['KA', 'AS', 'YB', 'EK'].map((initials, i) => (
-                  <div key={i} className="w-10 h-10 rounded-full gradient-gold flex items-center justify-center text-xs font-display font-bold text-primary-foreground border-2 border-background">
+                  <div key={i} className="w-10 h-10 rounded-full flex items-center justify-center text-xs font-display font-bold border-2" style={{ backgroundColor: colors.accent, color: 'white', borderColor: colors.background }}>
                     {initials}
                   </div>
                 ))}
               </div>
-              <div className="font-body text-sm text-muted-foreground">
-                <span className="text-foreground font-semibold">2,400+</span> students already on Azaman
+              <div className="font-body text-sm" style={{ color: colors.mutedForeground }}>
+                <span style={{ color: colors.foreground, fontWeight: 'bold' }}>2,400+</span> students already on Azaman
               </div>
             </motion.div>
           </motion.div>

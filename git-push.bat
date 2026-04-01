@@ -1,0 +1,1 @@
+"C:\Program Files\Git\bin\bash.exe" -c "cd /c/Users/USER/Desktop/azaman && git status && git add . && git commit -m 'Complete Azaman fintech app with responsive design and Vercel deployment ready' && git push origin main"

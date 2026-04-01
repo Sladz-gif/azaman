@@ -1,12 +1,16 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronLeft, Search, Bookmark, Share2, MessageCircle } from 'lucide-react';
+import { ChevronLeft, Search, Bookmark, Share2, MessageCircle, Filter, TrendingUp } from 'lucide-react';
+import { useTheme } from '@/context/ThemeContext';
+import { GlassCard } from '@/components/ui/GlassCard';
+import { AccentButton } from '@/components/ui/AccentButton';
 import { mockArticles, mockMarketData } from '@/data/mockData';
 import { useNavigate } from 'react-router-dom';
 
 const categories = ['All', 'Business', 'Finance', 'Ghana Economy', 'Startups', 'Student Life', 'Markets'];
 
 const NewsPage = () => {
+  const { colors } = useTheme();
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedArticle, setSelectedArticle] = useState<string | null>(null);
