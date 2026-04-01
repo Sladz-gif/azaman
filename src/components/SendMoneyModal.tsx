@@ -21,7 +21,11 @@ const SendMoneyModal = ({ open, onClose }: Props) => {
   const [note, setNote] = useState('');
   const [pin, setPin] = useState('');
   const [showPin, setShowPin] = useState(false);
-  const [selectedRecipient, setSelectedRecipient] = useState<any>(null);
+  const [selectedRecipient, setSelectedRecipient] = useState<{
+    username: string;
+    name: string;
+    avatar?: string;
+  } | null>(null);
 
   const reset = () => { 
     setStep(1); 
@@ -46,7 +50,11 @@ const SendMoneyModal = ({ open, onClose }: Props) => {
     }
   };
 
-  const selectRecipient = (recipient: any) => {
+  const selectRecipient = (recipient: {
+    username: string;
+    name: string;
+    avatar?: string;
+  }) => {
     setSelectedRecipient(recipient);
     setRecipient(recipient.username);
     setStep(2);

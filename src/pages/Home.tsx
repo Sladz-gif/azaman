@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '@/context/ThemeContext';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { BalanceCard } from '@/components/ui/BalanceCard';
@@ -7,9 +8,10 @@ import SendMoneyModal from '@/components/SendMoneyModal';
 import { mockUser, mockTransactions, recentRecipients } from '@/data/mockData';
 import { Bell, ArrowUp, ArrowDown, ArrowLeftRight, Plus, History, CreditCard, BookOpen, User, Home } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { Transaction } from '@/types';
 
 interface TransactionRowProps {
-  transaction: any;
+  transaction: Transaction;
 }
 
 const TransactionRow: React.FC<TransactionRowProps> = ({ transaction }) => {

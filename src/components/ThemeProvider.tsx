@@ -122,7 +122,9 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
         if (g) store.setGradient(g);
         if (m) store.setMode(m);
       }
-    } catch {}
+    } catch {
+      // Silently ignore errors during theme initialization
+    }
   }, []);
 
   return <>{children}</>;

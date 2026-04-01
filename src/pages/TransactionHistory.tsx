@@ -4,9 +4,10 @@ import { GlassCard } from '@/components/ui/GlassCard';
 import { AccentButton } from '@/components/ui/AccentButton';
 import { mockTransactions } from '@/data/mockData';
 import { ArrowLeft, Download, Filter, Search, Calendar, ChevronDown } from 'lucide-react';
+import { Transaction } from '@/types';
 
 interface TransactionRowProps {
-  transaction: any;
+  transaction: Transaction;
 }
 
 const TransactionRow: React.FC<TransactionRowProps> = ({ transaction }) => {

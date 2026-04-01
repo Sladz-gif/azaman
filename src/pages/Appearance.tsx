@@ -102,7 +102,7 @@ const Appearance: React.FC = () => {
             {accentColors.map((accent) => (
               <button
                 key={accent.name}
-                onClick={() => setAccent(accent.name as any)}
+                onClick={() => setAccent(accent.name as 'ember' | 'neon' | 'gold' | 'ice' | 'blush')}
                 className={`relative p-3 sm:p-4 rounded-2xl transition-all ${
                   theme.accent === accent.name ? 'ring-2 ring-offset-2' : ''
                 }`}
@@ -135,7 +135,7 @@ const Appearance: React.FC = () => {
             {gradients.map((gradient) => (
               <button
                 key={gradient.name}
-                onClick={() => setGradient(gradient.name as any)}
+                onClick={() => setGradient(gradient.name as 'obsidian' | 'smoke' | 'aurora' | 'chalk' | 'marble' | 'golden' | 'sunset' | 'ocean' | 'forest')}
                 className={`relative w-full p-4 rounded-2xl transition-all ${
                   theme.gradient === gradient.name ? 'ring-2 ring-offset-2' : ''
                 }`}

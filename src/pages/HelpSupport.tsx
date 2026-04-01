@@ -334,7 +334,7 @@ const HelpSupport: React.FC = () => {
               <GlassCard 
                 key={action.id}
                 className="p-4 cursor-pointer hover:bg-white/5 transition-all"
-                onClick={() => action.action !== 'help_center' && handleContact(action.action as any)}
+                onClick={() => action.action !== 'help_center' && handleContact(action.action as 'chat' | 'email' | 'phone')}
               >
                 <div 
                   className="w-10 h-10 rounded-full flex items-center justify-center mb-3"

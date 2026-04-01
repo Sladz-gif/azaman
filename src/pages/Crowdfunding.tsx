@@ -5,9 +5,10 @@ import { AccentButton } from '@/components/ui/AccentButton';
 import { NumericKeypad } from '@/components/ui/NumericKeypad';
 import { mockCampaigns } from '@/data/mockData';
 import { ArrowLeft, Plus, Heart, Share2, Users, Calendar, Target, TrendingUp } from 'lucide-react';
+import { CrowdfundCampaign } from '@/types';
 
 interface CampaignProps {
-  campaign: any;
+  campaign: CrowdfundCampaign;
   isOwned?: boolean;
 }
 
@@ -74,15 +75,21 @@ const Crowdfunding: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'my' | 'discover'>('my');
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [showSupportModal, setShowSupportModal] = useState(false);
-  const [selectedCampaign, setSelectedCampaign] = useState<any>(null);
+  const [selectedCampaign, setSelectedCampaign] = useState<CrowdfundCampaign | null>(null);
   const [supportAmount, setSupportAmount] = useState('');
   const [supportNote, setSupportNote] = useState('');
 
-  const [newCampaign, setNewCampaign] = useState({
+  const [newCampaign, setNewCampaign] = useState<{
+    title: string;
+    description: string;
+    target: number;
+    category: 'Education' | 'Emergency' | 'Project' | 'Event' | 'Business' | 'Health' | 'Other';
+    emoji: string;
+  }>({
     title: '',
     description: '',
     target: 0,
-    category: 'Education' as const,
+    category: 'Education',
     emoji: '🎓',
   });
 
@@ -92,7 +99,7 @@ const Crowdfunding: React.FC = () => {
 
   const emojis = ['🎓', '🏥', '🎵', '🎉', '💼', '🌱', '📚', '🏠', '🚗', '💡'];
 
-  const handleSupport = (campaign: any) => {
+  const handleSupport = (campaign: CrowdfundCampaign) => {
     setSelectedCampaign(campaign);
     setShowSupportModal(true);
   };
@@ -279,7 +286,7 @@ const Crowdfunding: React.FC = () => {
                   {categories.map((cat) => (
                     <button
                       key={cat}
-                      onClick={() => setNewCampaign({ ...newCampaign, category: cat as any })}
+                      onClick={() => setNewCampaign({ ...newCampaign, category: cat as 'Education' | 'Emergency' | 'Project' | 'Event' | 'Business' | 'Health' | 'Other' })}
                       className={`px-3 py-2 rounded-full text-xs transition-all ${
                         newCampaign.category === cat ? 'text-white' : ''
                       }`}
