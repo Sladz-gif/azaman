@@ -39,8 +39,8 @@
     --pulse-blue: 213 100% 56%;
     --pulse-orange: 25 100% 50%;
 
-    --gradient-obsidian-from: 0 0% 4%;
-    --gradient-obsidian-to: 0 0% 12%;
+    --gradient-from: 0 0% 4%;
+    --gradient-to: 0 0% 12%;
 
     --sidebar-background: 0 0% 6%;
     --sidebar-foreground: 0 0% 90%;
