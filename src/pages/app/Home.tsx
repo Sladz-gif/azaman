@@ -36,7 +36,7 @@ const AppHome = () => {
             <Bell className="w-5 h-5" />
             <span className="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-primary border-2 border-background" />
           </button>
-          <div className="w-10 h-10 rounded-full gradient-gold flex items-center justify-center text-xs font-display font-bold text-primary-foreground">
+          <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-xs font-display font-bold text-primary-foreground">
             {user.name.split(' ').map((n) => n[0]).join('')}
           </div>
         </div>
