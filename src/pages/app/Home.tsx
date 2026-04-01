@@ -8,6 +8,8 @@ import ReceiveModal from '@/components/ReceiveModal';
 
 const AppHome = () => {
   const { user, transactions, addReaction } = useAppStore();
+  const { gradient } = useThemeStore();
+  const grad = gradientStyles[gradient];
   const [showSend, setShowSend] = useState(false);
   const [showReceive, setShowReceive] = useState(false);
   const [showReactions, setShowReactions] = useState<string | null>(null);
