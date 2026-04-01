@@ -93,6 +93,10 @@
   .font-display {
     font-family: 'Syne', sans-serif;
   }
+  .font-logo {
+    font-family: 'Righteous', cursive;
+    letter-spacing: 0.08em;
+  }
   .font-body {
     font-family: 'DM Sans', sans-serif;
   }

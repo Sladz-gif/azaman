@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-border/50">
       <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
-        <span className="font-display font-extrabold text-xl text-primary tracking-tight">AZAMAN</span>
+        <span className="font-logo text-2xl text-primary">AZAMAN</span>
         <div className="hidden md:flex items-center gap-8 font-body text-sm text-muted-foreground">
           <a href="#features" className="hover:text-foreground transition-colors">Features</a>
           <a href="#how-it-works" className="hover:text-foreground transition-colors">How It Works</a>

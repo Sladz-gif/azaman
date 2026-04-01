@@ -33,7 +33,7 @@ const AppDashboard = () => {
     <div className="min-h-screen flex flex-col bg-background">
       {/* App Header */}
       <header className="sticky top-0 z-40 glass border-b border-border/50 px-4 h-14 flex items-center justify-center">
-        <span className="font-display font-extrabold text-lg text-primary tracking-tight">AZAMAN</span>
+        <span className="font-logo text-xl text-primary">AZAMAN</span>
       </header>
 
       {/* Content */}
