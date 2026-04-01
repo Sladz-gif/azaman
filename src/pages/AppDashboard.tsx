@@ -1,21 +1,23 @@
-import { Home, PiggyBank, Ticket, BookOpen, User } from 'lucide-react';
+import { Home, PiggyBank, Ticket, BookOpen, User, CreditCard } from 'lucide-react';
 import { useAppStore } from '@/stores/appStore';
 import AppHome from './app/Home';
 import AppSave from './app/Save';
 import AppTickets from './app/Tickets';
 import AppLearn from './app/Learn';
 import AppProfile from './app/Profile';
+import AppCards from './app/Cards';
 
 const tabs = [
   { id: 'home', icon: Home, label: 'Home' },
+  { id: 'cards', icon: CreditCard, label: 'Cards' },
   { id: 'save', icon: PiggyBank, label: 'Save' },
   { id: 'tickets', icon: Ticket, label: 'Tickets' },
-  { id: 'learn', icon: BookOpen, label: 'Learn' },
   { id: 'profile', icon: User, label: 'Profile' },
 ];
 
 const tabComponents: Record<string, React.FC> = {
   home: AppHome,
+  cards: AppCards,
   save: AppSave,
   tickets: AppTickets,
   learn: AppLearn,
