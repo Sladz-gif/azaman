@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bell, ArrowUpRight, ArrowDownLeft, Smartphone, Plus, ChevronRight } from 'lucide-react';
 import { useAppStore } from '@/stores/appStore';
+import { useThemeStore, gradientStyles } from '@/stores/themeStore';
 import SendMoneyModal from '@/components/SendMoneyModal';
 import ReceiveModal from '@/components/ReceiveModal';
 
