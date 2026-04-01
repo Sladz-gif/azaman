@@ -26,7 +26,7 @@ export const gradientStyles = {
 };
 
 export const useThemeStore = create<ThemeState>((set) => ({
-  accent: 'gold',
+  accent: 'orange',
   gradient: 'obsidian',
   mode: 'dark',
   setAccent: (accent) => set({ accent }),
