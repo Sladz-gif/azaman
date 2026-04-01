@@ -112,14 +112,23 @@
     -webkit-backdrop-filter: blur(var(--glass-blur));
     border-radius: 20px;
   }
-  .gradient-gold {
-    background: linear-gradient(135deg, hsl(40 52% 54%), hsl(40 52% 38%));
+  .gradient-orange {
+    background: linear-gradient(135deg, hsl(16 99% 60%), hsl(36 99% 60%));
   }
   .gradient-obsidian {
     background: linear-gradient(135deg, hsl(0 0% 4%), hsl(0 0% 12%));
   }
-  .gradient-text-gold {
-    background: linear-gradient(135deg, hsl(40 52% 64%), hsl(40 52% 44%));
+  .gradient-cyan-blue {
+    background: linear-gradient(135deg, hsl(192 100% 50%), hsl(212 100% 50%));
+  }
+  .gradient-text-orange {
+    background: linear-gradient(135deg, hsl(36 99% 65%), hsl(16 99% 55%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .gradient-text-cyan {
+    background: linear-gradient(135deg, hsl(192 100% 55%), hsl(212 100% 55%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
