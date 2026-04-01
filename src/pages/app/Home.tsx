@@ -2,11 +2,14 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bell, ArrowUpRight, ArrowDownLeft, Smartphone, Plus, ChevronRight } from 'lucide-react';
 import { useAppStore } from '@/stores/appStore';
+import { useThemeStore, gradientStyles } from '@/stores/themeStore';
 import SendMoneyModal from '@/components/SendMoneyModal';
 import ReceiveModal from '@/components/ReceiveModal';
 
 const AppHome = () => {
   const { user, transactions, addReaction } = useAppStore();
+  const { gradient } = useThemeStore();
+  const grad = gradientStyles[gradient];
   const [showSend, setShowSend] = useState(false);
   const [showReceive, setShowReceive] = useState(false);
   const [showReactions, setShowReactions] = useState<string | null>(null);
@@ -33,7 +36,7 @@ const AppHome = () => {
             <Bell className="w-5 h-5" />
             <span className="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-primary border-2 border-background" />
           </button>
-          <div className="w-10 h-10 rounded-full gradient-gold flex items-center justify-center text-xs font-display font-bold text-primary-foreground">
+          <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-xs font-display font-bold text-primary-foreground">
             {user.name.split(' ').map((n) => n[0]).join('')}
           </div>
         </div>
@@ -44,13 +47,13 @@ const AppHome = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="glass-card p-6 relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, hsl(0 0% 4%), hsl(0 0% 12%))' }}
+        style={{ background: `linear-gradient(135deg, ${grad.from}, ${grad.to})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
         <div className="relative z-10">
           <div className="flex items-center justify-between mb-1">
             <span className="font-body text-[11px] uppercase tracking-[0.15em] text-muted-foreground">Total Balance</span>
-            <span className="text-xs font-body text-neon bg-neon/10 px-2 py-0.5 rounded-full">+{user.monthChange}%</span>
+            <span className="text-xs font-body text-cyan bg-cyan/10 px-2 py-0.5 rounded-full">+{user.monthChange}%</span>
           </div>
           <p className="font-display font-extrabold text-[38px] leading-tight">
             GH₵ {user.balance.toLocaleString('en-GH', { minimumFractionDigits: 2 })}
@@ -60,11 +63,11 @@ const AppHome = () => {
           <div className="grid grid-cols-3 gap-3">
             <div>
               <p className="font-body text-[10px] text-muted-foreground uppercase">Savings</p>
-              <p className="font-display font-bold text-sm text-neon">GH₵ {user.savings.toLocaleString()}</p>
+              <p className="font-display font-bold text-sm text-cyan">GH₵ {user.savings.toLocaleString()}</p>
             </div>
             <div>
               <p className="font-body text-[10px] text-muted-foreground uppercase">Invested</p>
-              <p className="font-display font-bold text-sm text-ice">GH₵ {user.invested.toLocaleString()}</p>
+              <p className="font-display font-bold text-sm text-blue">GH₵ {user.invested.toLocaleString()}</p>
             </div>
             <div>
               <p className="font-body text-[10px] text-muted-foreground uppercase">Spent</p>
@@ -93,7 +96,7 @@ const AppHome = () => {
 
       {/* Ad Banner */}
       <div className="glass-card px-4 py-3 flex items-center gap-3">
-        <div className="w-9 h-9 rounded-lg gradient-gold flex items-center justify-center text-xs font-display font-bold text-primary-foreground shrink-0">AD</div>
+        <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-xs font-display font-bold text-primary-foreground shrink-0">AD</div>
         <div className="flex-1 min-w-0">
           <p className="font-body text-xs font-medium truncate">MTN MoMo</p>
           <p className="font-body text-[10px] text-muted-foreground truncate">Send money free this December</p>
@@ -122,7 +125,7 @@ const AppHome = () => {
                   <p className="font-body text-[11px] text-muted-foreground truncate">{tx.date} {tx.note && `· ${tx.note}`}</p>
                 </div>
                 <div className="text-right shrink-0">
-                  <p className={`font-display font-bold text-sm ${tx.type === 'in' ? 'text-neon' : 'text-muted-foreground'}`}>
+                  <p className={`font-display font-bold text-sm ${tx.type === 'in' ? 'text-cyan' : 'text-muted-foreground'}`}>
                     {tx.type === 'in' ? '+' : '-'}GH₵ {tx.amount}
                   </p>
                   {tx.reaction && <span className="text-sm">{tx.reaction}</span>}
