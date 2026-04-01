@@ -47,7 +47,7 @@ const AppHome = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="glass-card p-6 relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, hsl(0 0% 4%), hsl(0 0% 12%))' }}
+        style={{ background: `linear-gradient(135deg, ${grad.from}, ${grad.to})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
         <div className="relative z-10">
