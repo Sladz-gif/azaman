@@ -63,7 +63,7 @@ const AppHome = () => {
           <div className="grid grid-cols-3 gap-3">
             <div>
               <p className="font-body text-[10px] text-muted-foreground uppercase">Savings</p>
-              <p className="font-display font-bold text-sm text-neon">GH₵ {user.savings.toLocaleString()}</p>
+              <p className="font-display font-bold text-sm text-cyan">GH₵ {user.savings.toLocaleString()}</p>
             </div>
             <div>
               <p className="font-body text-[10px] text-muted-foreground uppercase">Invested</p>
