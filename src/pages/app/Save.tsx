@@ -8,7 +8,7 @@ import type { SavingsGoal } from '@/types';
 const AppSave = () => {
   const { savingsGoals, addSavingsGoal } = useAppStore();
   const [showNew, setShowNew] = useState(false);
-  const [newGoal, setNewGoal] = useState({ name: '', emoji: '🎯', target: '', frequency: 'daily' as const, amount: '', locked: false });
+  const [newGoal, setNewGoal] = useState({ name: '', emoji: '🎯', target: '', frequency: 'daily' as 'daily' | 'weekly' | 'monthly', amount: '', locked: false });
 
   const totalSaved = savingsGoals.reduce((sum, g) => sum + g.saved, 0);
 
