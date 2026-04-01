@@ -17,6 +17,7 @@ export default {
         display: ["Syne", "sans-serif"],
         body: ["DM Sans", "sans-serif"],
         mono: ["DM Mono", "monospace"],
+        logo: ["Righteous", "cursive"],
       },
       colors: {
         border: "hsl(var(--border))",
