@@ -125,7 +125,7 @@ const AppHome = () => {
                   <p className="font-body text-[11px] text-muted-foreground truncate">{tx.date} {tx.note && `· ${tx.note}`}</p>
                 </div>
                 <div className="text-right shrink-0">
-                  <p className={`font-display font-bold text-sm ${tx.type === 'in' ? 'text-neon' : 'text-muted-foreground'}`}>
+                  <p className={`font-display font-bold text-sm ${tx.type === 'in' ? 'text-cyan' : 'text-muted-foreground'}`}>
                     {tx.type === 'in' ? '+' : '-'}GH₵ {tx.amount}
                   </p>
                   {tx.reaction && <span className="text-sm">{tx.reaction}</span>}
