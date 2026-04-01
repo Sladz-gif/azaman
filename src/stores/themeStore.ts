@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 
 interface ThemeState {
-  accent: 'gold' | 'ember' | 'neon' | 'ice' | 'blush';
+  accent: 'cream' | 'amber' | 'orange' | 'cyan' | 'blue';
   gradient: 'obsidian' | 'smoke' | 'aurora' | 'chalk' | 'marble';
   mode: 'dark' | 'light';
   setAccent: (accent: ThemeState['accent']) => void;
