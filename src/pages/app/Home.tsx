@@ -53,7 +53,7 @@ const AppHome = () => {
         <div className="relative z-10">
           <div className="flex items-center justify-between mb-1">
             <span className="font-body text-[11px] uppercase tracking-[0.15em] text-muted-foreground">Total Balance</span>
-            <span className="text-xs font-body text-neon bg-neon/10 px-2 py-0.5 rounded-full">+{user.monthChange}%</span>
+            <span className="text-xs font-body text-cyan bg-cyan/10 px-2 py-0.5 rounded-full">+{user.monthChange}%</span>
           </div>
           <p className="font-display font-extrabold text-[38px] leading-tight">
             GH₵ {user.balance.toLocaleString('en-GH', { minimumFractionDigits: 2 })}
