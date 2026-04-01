@@ -96,7 +96,7 @@ const AppHome = () => {
 
       {/* Ad Banner */}
       <div className="glass-card px-4 py-3 flex items-center gap-3">
-        <div className="w-9 h-9 rounded-lg gradient-gold flex items-center justify-center text-xs font-display font-bold text-primary-foreground shrink-0">AD</div>
+        <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-xs font-display font-bold text-primary-foreground shrink-0">AD</div>
         <div className="flex-1 min-w-0">
           <p className="font-body text-xs font-medium truncate">MTN MoMo</p>
           <p className="font-body text-[10px] text-muted-foreground truncate">Send money free this December</p>
