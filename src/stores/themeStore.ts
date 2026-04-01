@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 
 interface ThemeState {
-  accent: 'gold' | 'ember' | 'neon' | 'ice' | 'blush';
+  accent: 'cream' | 'amber' | 'orange' | 'cyan' | 'blue';
   gradient: 'obsidian' | 'smoke' | 'aurora' | 'chalk' | 'marble';
   mode: 'dark' | 'light';
   setAccent: (accent: ThemeState['accent']) => void;
@@ -10,11 +10,11 @@ interface ThemeState {
 }
 
 export const accentColors = {
-  gold: { hex: '#C9A84C', label: 'Gold' },
-  ember: { hex: '#FF6B00', label: 'Ember' },
-  neon: { hex: '#00FF88', label: 'Neon' },
-  ice: { hex: '#38BDF8', label: 'Ice' },
-  blush: { hex: '#FF4D8D', label: 'Blush' },
+  cream: { hex: '#FCF5EF', label: 'Cream' },
+  amber: { hex: '#FEA735', label: 'Amber' },
+  orange: { hex: '#FE7235', label: 'Orange' },
+  cyan: { hex: '#00C3FF', label: 'Cyan' },
+  blue: { hex: '#0077FF', label: 'Blue' },
 };
 
 export const gradientStyles = {
@@ -26,7 +26,7 @@ export const gradientStyles = {
 };
 
 export const useThemeStore = create<ThemeState>((set) => ({
-  accent: 'gold',
+  accent: 'orange',
   gradient: 'obsidian',
   mode: 'dark',
   setAccent: (accent) => set({ accent }),
