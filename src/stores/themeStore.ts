@@ -10,11 +10,11 @@ interface ThemeState {
 }
 
 export const accentColors = {
-  gold: { hex: '#C9A84C', label: 'Gold' },
-  ember: { hex: '#FF6B00', label: 'Ember' },
-  neon: { hex: '#00FF88', label: 'Neon' },
-  ice: { hex: '#38BDF8', label: 'Ice' },
-  blush: { hex: '#FF4D8D', label: 'Blush' },
+  cream: { hex: '#FCF5EF', label: 'Cream' },
+  amber: { hex: '#FEA735', label: 'Amber' },
+  orange: { hex: '#FE7235', label: 'Orange' },
+  cyan: { hex: '#00C3FF', label: 'Cyan' },
+  blue: { hex: '#0077FF', label: 'Blue' },
 };
 
 export const gradientStyles = {
