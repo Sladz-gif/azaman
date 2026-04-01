@@ -1,8 +1,8 @@
 import { Transaction, SavingsGoal, TicketEvent, NewsArticle, GameChapter, CrowdfundCampaign } from '@/types';
 
 export const mockUser = {
-  name: 'Kwame Asante',
-  username: 'kwame.azaman',
+  name: 'Aza',
+  username: 'aza',
   university: 'University of Ghana',
   balance: 4820.50,
   savings: 2150.00,
